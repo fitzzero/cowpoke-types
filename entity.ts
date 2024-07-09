@@ -9,22 +9,19 @@ import {
 import { AccessLevels, AccessProps } from "./access";
 
 // Entity Kinds
-export enum EntityKinds {
-  User = "user",
-  Access = "user.access",
-  Accounts = "user.accounts",
-  Session = "user.session",
-  Ace = "ace",
-  // Discord
-  // Oanda
-  OandaAccount = "oanda.account",
-  OandaInstrument = "oanda.instrument",
-  OandaOrder = "oanda.order",
-  OandaPosition = "oanda.position",
-  OandaPricing = "oanda.pricing",
-  OandaTrade = "oanda.trade",
-  OandaTransaction = "oanda.transaction",
-}
+export type EntityKinds =
+  | "user"
+  | "user.access"
+  | "user.accounts"
+  | "user.session"
+  | "ace"
+  | "oanda.account"
+  | "oanda.instrument"
+  | "oanda.order"
+  | "oanda.position"
+  | "oanda.pricing"
+  | "oanda.trade"
+  | "oanda.transaction";
 
 // Callback Fn
 export type Callback<T> = (values: EntityResponse<T | Nullish>) => void;

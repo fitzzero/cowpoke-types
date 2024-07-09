@@ -1,23 +1,16 @@
 import { Id, Nullish, _BaseProps } from "./_base";
 import { EntityKinds, EntityResponse } from "./entity";
 
-export enum AccessLevels {
-  None = 0,
-  ReadBasic = 1,
-  ReadFull = 2,
-  CreateEntity = 3,
-  ModerateEntity = 4,
-}
-
+export type AccessLevels = 1 | 2 | 3 | 4;
 export interface AceProps extends _BaseProps {
   createdAt: number;
   entityKind: EntityKinds;
   entityId: string;
-  [AccessLevels.None]: string[];
-  [AccessLevels.ReadBasic]: string[];
-  [AccessLevels.ReadFull]: string[];
-  [AccessLevels.CreateEntity]: string[];
-  [AccessLevels.ModerateEntity]: string[];
+  0: string[];
+  1: string[];
+  2: string[];
+  3: string[];
+  4: string[];
 }
 
 export type AceLookup = (

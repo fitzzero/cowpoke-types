@@ -1,0 +1,9 @@
+{
+  "name": "cowpoke-types",
+  "version": "0.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/fitzzero/cowpoke-types",
+  "author": "logan <loganfarseer@gmail.com>",
+  "license": "MIT",
+  "type": "module"
+}

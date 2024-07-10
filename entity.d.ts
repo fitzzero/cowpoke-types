@@ -6,7 +6,7 @@ import {
   Status,
   _BaseProps,
 } from "./_base";
-import { AccessValues, AccessProps } from "./access";
+import { AccessProps } from "./access";
 
 // Callback Fn
 export type Callback<T> = (values: EntityResponse<T | Nullish>) => void;
@@ -95,7 +95,7 @@ export type UpdateRequestClient<T> = (
 // Custom Method
 export type CustomEventCollection<T> = {
   name: string;
-  access: AccessValues;
+  access: number;
   handler: CustomRequest<T, any>;
 }[];
 export type CustomRequest<T, R> = (

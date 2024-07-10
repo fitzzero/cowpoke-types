@@ -1,10 +1,10 @@
 import { Id, Nullish, _BaseProps } from "./_base";
-import { EntityKinds, EntityResponse } from "./entity";
+import { EntityResponse } from "./entity";
 
 export type AccessValues = 1 | 2 | 3 | 4;
 export interface AceProps extends _BaseProps {
   createdAt: number;
-  entityKind: EntityKinds;
+  entityKind: string;
   entityId: string;
   0: string[];
   1: string[];
@@ -14,7 +14,7 @@ export interface AceProps extends _BaseProps {
 }
 
 export type AceLookup = (
-  entityKind: EntityKinds,
+  entityKind: string,
   entityId: string,
   defaultAccess?: Record<AccessValues, string[]>
 ) => Promise<AceProps | Nullish>;
@@ -24,7 +24,7 @@ export interface AccessProps extends _BaseProps {
   scopes: Scopes;
 }
 
-export type Scopes = Record<EntityKinds, AccessValues>;
+export type Scopes = Record<string, AccessValues>;
 
 export interface CheckAccessProps {
   access?: AccessProps;

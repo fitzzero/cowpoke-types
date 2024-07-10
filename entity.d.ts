@@ -6,22 +6,7 @@ import {
   Status,
   _BaseProps,
 } from "./_base";
-import { AccessLevels, AccessProps } from "./access";
-
-// Entity Kinds
-export type EntityKinds =
-  | "user"
-  | "user.access"
-  | "user.accounts"
-  | "user.session"
-  | "ace"
-  | "oanda.account"
-  | "oanda.instrument"
-  | "oanda.order"
-  | "oanda.position"
-  | "oanda.pricing"
-  | "oanda.trade"
-  | "oanda.transaction";
+import { AccessValues, AccessProps } from "./access";
 
 // Callback Fn
 export type Callback<T> = (values: EntityResponse<T | Nullish>) => void;
@@ -110,7 +95,7 @@ export type UpdateRequestClient<T> = (
 // Custom Method
 export type CustomEventCollection<T> = {
   name: string;
-  access: AccessLevels;
+  access: AccessValues;
   handler: CustomRequest<T, any>;
 }[];
 export type CustomRequest<T, R> = (

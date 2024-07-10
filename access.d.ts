@@ -1,7 +1,7 @@
 import { Id, Nullish, _BaseProps } from "./_base";
 import { EntityKinds, EntityResponse } from "./entity";
 
-export type AccessLevels = 1 | 2 | 3 | 4;
+export type AccessValues = 1 | 2 | 3 | 4;
 export interface AceProps extends _BaseProps {
   createdAt: number;
   entityKind: EntityKinds;
@@ -16,7 +16,7 @@ export interface AceProps extends _BaseProps {
 export type AceLookup = (
   entityKind: EntityKinds,
   entityId: string,
-  defaultAccess?: Record<AccessLevels, string[]>
+  defaultAccess?: Record<AccessValues, string[]>
 ) => Promise<AceProps | Nullish>;
 
 export interface AccessProps extends _BaseProps {
@@ -24,16 +24,16 @@ export interface AccessProps extends _BaseProps {
   scopes: Scopes;
 }
 
-export type Scopes = Record<EntityKinds, AccessLevels>;
+export type Scopes = Record<EntityKinds, AccessValues>;
 
 export interface CheckAccessProps {
   access?: AccessProps;
   entity?: Id;
-  reqLevel: AccessLevels;
+  reqLevel: AccessValues;
   response: EntityResponse<any>;
 }
 
 export type FindHighestAccess = (props: {
   access?: AccessProps;
   entity?: Id;
-}) => Promise<AccessLevels>;
+}) => Promise<AccessValues>;

@@ -4,6 +4,5 @@
   "main": "index.js",
   "repository": "https://github.com/fitzzero/cowpoke-types",
   "author": "logan <loganfarseer@gmail.com>",
-  "license": "MIT",
-  "type": "module"
+  "license": "MIT"
 }
